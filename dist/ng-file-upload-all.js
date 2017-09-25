@@ -551,6 +551,7 @@ ngFileUpload.service('UploadBase', ['$http', '$q', '$timeout', function ($http, 
         }
         uploadWithAngular();
       }, function (e) {
+        deferred.reject(e);
         throw e;
       });
     } else if (config.resumeSize) {
